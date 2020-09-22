@@ -18,6 +18,3 @@ def word2string(v):
 lst = ['16722','19274','19797','21057']
 str1 = word2string(lst)
 print(str1)
-a = [i for i in range(6)]
-a.
-
