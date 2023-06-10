@@ -3,6 +3,9 @@ class Word2String:
     def __init__(self) -> None:
         pass
 
+    def __str__(self) -> str:
+        return str(self)
+
     def _word_2_2Dbyte(self, element : int) -> tuple:
         '''
         Returns the tuple of 2 bytes
