@@ -1,21 +1,29 @@
+class Word2String:
+    
+    def __init__(self) -> None:
+        pass
 
-def word_2_2Dbyte(x):
-    c = (int(x) >> 8) & 0xff
-    b = int(x) & 0xff
-    return b,c
+    def _word_2_2Dbyte(self, element : int) -> tuple:
+        '''
+        Returns the tuple of 2 bytes
+        print(_word_2_2Dbyte(18498))
+        (66, 72)
+        '''
+        c = (int(element) >> 8) & 0xff
+        b = int(element) & 0xff
+        return b,c
+    
+    def word2string(self, word_list : list) -> str:
 
-def word2string(l):
-    byte_list_2d = [word_2_2Dbyte(i) for i in l]
-    b = [j for s in byte_list_2d for j in s]
-    chr_list = [chr(l) for l in b]
-    # return ch
-    st = ''
-    for k in chr_list:
-        st += k
+        '''
+        provide the list of 16 bit decimal values (0-65535) equivalent to 2 byte ASCII Codes and it will return a String 
 
-    return st
-
-
-lst = ['18498','21057','22340','19009']
-var = word2string(lst)
-print(var)
+        lst = ['18498','21057','22340','19009']
+        w2s = Word2String()
+        print(w2s.word2string(lst))
+        'BHARDWAJ'
+        '''
+        
+        byte_list_2d = [self._word_2_2Dbyte(i) for i in word_list]
+        chr_list = [chr(j) for s in byte_list_2d for j in s]
+        return ''.join(chr_list)
